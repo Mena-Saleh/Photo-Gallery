@@ -48,7 +48,6 @@ body{
 transition: 0.3s;
 background-color: #80919f;
 color: #FFF;
-transform: scale(105%);
 }
 
 
@@ -96,7 +95,7 @@ transform: scale(105%);
 
 
 
-/* card */
+/*Card */
 
 
 .card{
@@ -259,6 +258,55 @@ box-shadow: 0px 0px 5px 2px #fff;
 
 
 
+/* Add photo page */
+
+
+#add-page{
+  height: 95vh;
+  background-color: #CDE6FA;
+  padding-top: 100px;
+}
+
+#add-photo-form{
+
+  width: 350px;
+  margin: 50px auto;
+  height: auto;
+  position: relative;
+}
+
+#add-photo-form label{
+display: block; 
+margin: 5px;
+}
+
+#add-photo-form input, #add-photo-form textarea{
+  width: 100%;
+  margin-bottom: 30px;  
+  height: 35px;
+}
+
+
+#add-photo-form button{
+  position: absolute;
+  bottom: -0%;
+  right: -70%;
+  width: 80px;
+  height: 30px;;
+  background: #FFF;
+  border: 1px solid black;
+  border-radius: 2px;
+  transition: 0.3s;
+
+}
+
+#add-photo-form button:hover{
+    transition: 0.3s;
+    background-color: #717171;
+    border-color: #717171;
+    color: #FFF;
+    
+}
 
 /* Responsiveness */
 

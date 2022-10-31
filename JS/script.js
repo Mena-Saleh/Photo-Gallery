@@ -92,8 +92,8 @@ publicGrid.innerHTML += card;
 //Function that creates cards with API data
 function generateCardsFromData(data){
     for (let [key, value] of Object.entries(data)) {
-        //For now I'll pass the "Photo name" for photo name, because the API doesn't provide photo names.
-        createCard(value.user.profile_image.small, value.user.username, value.urls.regular, "Photo Name" , value.description, value.likes)
+        //For now I'll pass the "Lorem Ipsum" for photo name, because the API doesn't provide photo names.
+        createCard(value.user.profile_image.small, value.user.username, value.urls.regular, "Lorem Ipsum" , value.description, value.likes)
     }
 }
 
@@ -101,6 +101,14 @@ function generateCardsFromData(data){
 
 //Function Calls
 
-getAPIData(baseURL,Math.floor(Math.random() * 100), key).then(function(data){
-generateCardsFromData(data);
-});
+
+//To load the album every time the home page is refreshed or re-directed to.
+document.addEventListener("DOMContentLoaded", ()=> {
+
+    getAPIData(baseURL,Math.floor(Math.random() * 100), key).then(function(data){
+        generateCardsFromData(data);
+        });
+
+})
+
+
