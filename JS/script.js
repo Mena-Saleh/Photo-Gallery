@@ -1,29 +1,21 @@
-//Dynamic Navigation Theme:
-const nav = document.querySelector(".nav")
-const logo = document.querySelector("#logo")
+//Like/dislike heart animation
 
+function heartAnimation(event){
 
-window.addEventListener("scroll", dynamizeNav)       // Call the function fixNav when you scroll on the window
+const elem = event.target;
+elem.classList.toggle("heart-active");
+elem.classList.toggle("fa-solid");
 
-function dynamizeNav() {
-    if(window.scrollY > nav.offsetHeight + 100) {     // If the scroll on the y-axis is greater than navigations height + 100, then we should add the class of active
-        nav.classList.add("nav-active")
-        logo.src="Images/Logo4.png"
-    }
-    else {
-        nav.classList.remove("nav-active")                // If it is not, then we should remove the class
-        logo.src="Images/Logo3.png";
-    }
 }
 
+//Delete clicked element
 
-
-//Active entries styling:
-
-function isInViewPort(element) //Helper function to determine whether an element is in the viewport.
+function deleteElement(event)
 {
-      const rect = element.getBoundingClientRect();
-      return (rect.top >= -100 && rect.top <= 400);
-
+    const elem = event.target;
+    const isConfirmed = confirm("Are you sure you want to delete this photo?");
+    if(isConfirmed)
+    {
+        elem.parentElement.remove();
+    }
 }
-
