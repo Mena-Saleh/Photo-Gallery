@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Photo Gallery</title>
-    <link rel="icon" type="image/x-icon" href="Images/Icon.png">
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">  
@@ -19,6 +18,19 @@
 
     <section id="gallery">
 
+      <div class="title">
+        <hr>
+        <h2>Public Photos</h2>
+        <hr>
+      </div>
+
+      <div id="public-photos-grid" class="photo-grid">
+
+      </div>
+
+
+
+
         <div class="title">
           <hr>
           <h2>Local Photos</h2>
@@ -26,43 +38,84 @@
         </div>
 
 
-        <div class="card">
+        <div id="local-photos-grid" class="photo-grid">
+
+          <div class="card">
           
-          <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
-          <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
-          <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
-          <div class="photo">
-            <img src="Local_Images/automn.jpg" alt="user image">
-          </div>
-          <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
-          <div class="photo-text">
-            <div class="photo-name-likes">
-              <h4>Photo Name</h4>
-              <h6>142 Likes</h6>
+            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
+            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
+            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
+            <div class="photo">
+              <img src="Local_Images/automn.jpg" alt="user image">
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
+            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
+            <div class="photo-text">
+              <div class="photo-name-likes">
+                <h4>Photo Name</h4>
+                <h6><span class="like-count">142</span> Likes</h6>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
+            </div>
+            
+          </div>
+          <div class="card">
+            
+            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
+            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
+            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
+            <div class="photo">
+              <img src="Local_Images/fjord.jpg" alt="user image">
+            </div>
+            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
+            <div class="photo-text">
+              <div class="photo-name-likes">
+                <h4>Photo Name</h4>
+                <h6><span class="like-count">52</span> Likes</h6>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
+            </div>
+            
+          </div>
+          <div class="card">
+            
+            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
+            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
+            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
+            <div class="photo">
+              <img src="Local_Images/palmtunnel.jpg" alt="user image">
+            </div>
+            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
+            <div class="photo-text">
+              <div class="photo-name-likes">
+                <h4>Photo Name</h4>
+                <h6><span class="like-count">13</span> Likes</h6>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
+            </div>
+            
+          </div>
+          <div class="card">
+            
+            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
+            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
+            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
+            <div class="photo">
+              <img src="Local_Images/encenadaport.jpg" alt="user image">
+            </div>
+            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
+            <div class="photo-text">
+              <div class="photo-name-likes">
+                <h4>Photo Name</h4>
+                <h6><span class="like-count">121</span> Likes</h6>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
+            </div>
+            
           </div>
           
         </div>
-        <div class="card">
-          
-          <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
-          <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
-          <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
-          <div class="photo">
-            <img src="Local_Images/fjord.jpg" alt="user image">
-          </div>
-          <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
-          <div class="photo-text">
-            <div class="photo-name-likes">
-              <h4>Photo Name</h4>
-              <h6>142 Likes</h6>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
-          </div>
-          
-        </div>
-        
+
+    
         
         
         
