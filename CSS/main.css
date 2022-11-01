@@ -297,6 +297,7 @@ margin: 5px;
   border: 1px solid black;
   border-radius: 2px;
   transition: 0.3s;
+  cursor: pointer;
 
 }
 

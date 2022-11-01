@@ -35,7 +35,6 @@ function deleteElement(event)
     if(isConfirmed) //Delete parent element (the whole card) if confirmed by user and remove data from local storage.
     {
         deleteCardFromLocalStorage(elem.getAttribute("data-id")); //Delete data from local storage.
-        localStorage.idCounter --; //Decrement element count.
         elem.parentElement.remove(); //Remove HTML element without refreshing,
     }
 }
@@ -125,7 +124,7 @@ function createLocalCard (card)
 {
   const localCard = `<div class="card">
           
-  <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
+  <img class= "profile-pic" src="TestImages/user.png" alt="profile picture">
   <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
   <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)" data-id="${card.id}"></i>
   <div class="photo">
@@ -152,12 +151,71 @@ function createLocalCard (card)
 
 function generateCardsFromLocalStorage(){
   let cardKey;
+  //loop through all keys
+  Object.keys(localStorage).forEach(function(key){
+    if(key!= "idCounter")
+    {
+      let card = JSON.parse(localStorage[key]);  //Get the card in JSON format
+      createLocalCard(card);
+    }
+ });
+
+
   for(let i = 0; i < localStorage.idCounter; i++) //Loop over all cards stored
   {
-    let card = JSON.parse(localStorage["card"+i]);  //Get the ith card.
-    createLocalCard(card);
+    
   }
 }
+
+
+
+
+
+
+//Local storage manipulation and storing card data:
+
+//Class to represent card data:
+class Card  {
+  constructor(id,name, desc, img){
+    this.id = id;
+    this.name = name;
+    this.desc = desc;
+    this.img = img;
+  }
+}
+
+
+//Pushes a new card to the local storage.
+function writeCardToLocalStorage(card){
+  if(localStorage.idCounter == null) //Initialize counter if it doesn't exist
+  {
+    localStorage.idCounter = 0;
+  }
+    localStorage.setItem(`card${localStorage.idCounter}`, JSON.stringify(card)); //Set an item with unique ID storing the JSON object for the card as a string.
+    localStorage.idCounter ++; //Increment counter
+
+}
+
+
+//Deletes card from storage using id.
+function deleteCardFromLocalStorage(id)
+{
+  localStorage.removeItem("card" + id);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //Function Calls
@@ -185,6 +243,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 
 else //Functions related to add-photo page
+
+
 {
 
 //Add-photo form validation:
@@ -228,8 +288,9 @@ button.addEventListener('click', (event) =>{
             
           })
           
-          alert("Success!");
+
           form.submit();
+          window.location.href = "index.html#local-photos-grid";
         }
         else{
           alert("Please choose an image in jpg, jpeg or png format!"); //Notify user of error.
@@ -242,7 +303,7 @@ button.addEventListener('click', (event) =>{
 
 
     else{
-      alert("You can only use alphabets , or - for Name field"); //Notify user of error.
+     alert("You can only use alphabets , or - for Name field"); //Notify user of error.
     }
   
 
@@ -271,36 +332,4 @@ button.addEventListener('click', (event) =>{
 
 
 
-
-
-//Local storage manipulation and storing card data:
-
-//Class to represent card data:
-class Card  {
-  constructor(id,name, desc, img){
-    this.id = id;
-    this.name = name;
-    this.desc = desc;
-    this.img = img;
-  }
-}
-
-
-//Push a new card to the local storage:
-function writeCardToLocalStorage(card){
-  if(localStorage.idCounter == null) //Initialize counter if it doesn't exist
-  {
-    localStorage.idCounter = 0;
-  }
-    localStorage.setItem(`card${localStorage.idCounter}`, JSON.stringify(card)); //Set an item with unique ID storing the JSON object for the card as a string.
-    localStorage.idCounter ++; //Increment counter
-
-}
-
-
-//Deletes card from storage using id
-function deleteCardFromLocalStorage(id)
-{
-  localStorage.removeItem("card" + id);
-}
 
