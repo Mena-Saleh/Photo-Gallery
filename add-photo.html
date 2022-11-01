@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">  
   </head>
 
-  <body>
+  <body id="add-photo-body">
     <nav id = "nav">
       <h1>Photo Gallery</h1>
       <a href="index.html">LIST</a>
@@ -25,13 +25,13 @@
       </div>
 
 
-      <form action="" id="add-photo-form">
+      <form id="add-photo-form">
         <label for="Name">Name</label>
-        <input type="text" name="Name" minlength="5" maxlength="30" required>
+        <input type="text" name="Name" minlength="5" maxlength="30" required id="text-name">
         <label for="Description" >Description</label>
-        <textarea type="text" style="height: 90px; resize: none;" name="Description" col="50" cols = 10 required> </textarea>
-        <input type="file" accept=".JPG, .JPEG, .PNG" required />
-        <button type="submit">ADD</button>
+        <textarea type="text" style="height: 90px; resize: none;" name="Description" col="50" cols = 10 required id="text-desc"> </textarea>
+        <input type="file" accept=".JPG, .JPEG, .PNG" required id="file-input"/>
+        <button  id="form-button">ADD</button>
       </form>
         
 

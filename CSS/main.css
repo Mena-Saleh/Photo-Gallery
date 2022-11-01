@@ -344,6 +344,14 @@ margin-right: 20px;
   grid-template-columns: auto auto;
 }
 
+#add-photo-form button{
+  right: -20%;
+
+}
+
+
+
+
 }
 
 
@@ -353,7 +361,10 @@ margin-right: 20px;
     grid-template-columns: auto;
   }
   
+  #add-photo-form button{
+    right: 0%;
   
+  }
 
 }
 
@@ -367,6 +378,11 @@ margin-right: 20px;
 
   .title hr{
     width: 20%;
+  }
+
+  #add-photo-form{
+
+      width: 90%;
   }
 }
 
