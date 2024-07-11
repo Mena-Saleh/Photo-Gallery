@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Add Photo</title>
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">  
-
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Playwrite+PE:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body id="add-photo-body">
-    <nav id = "nav">
+    <nav id="nav">
       <h1>Photo Gallery</h1>
-      <a href="index.html">LIST</a>
+      <a href="index.html">Gallery</a>
     </nav>
 
-    <section id ="add-page">
-        
+    <section id="add-page">
       <div class="title">
-        <hr>
+        <hr />
         <h2>Photo Info</h2>
-        <hr>
+        <hr />
       </div>
 
-
       <form id="add-photo-form">
-        <label for="Name">Name</label>
-        <input type="text" name="Name" minlength="5" maxlength="30" required id="text-name">
-        <label for="Description" >Description</label>
-        <textarea type="text" style="height: 90px; resize: none;" name="Description" col="50" cols = 10 required id="text-desc"> </textarea>
-        <input type="file" accept=".JPG, .JPEG, .PNG" required id="file-input"/>
-        <button  id="form-button">ADD</button>
-      </form>
-        
+        <label for="text-name">Name</label>
+        <input
+          type="text"
+          name="text-name"
+          minlength="5"
+          maxlength="30"
+          required
+          id="text-name"
+        />
+        <label for="text-desc">Description</label>
+        <textarea
+          name="text-desc"
+          id="text-desc"
+          style="height: 90px; resize: none"
+          required
+          type="text"
+        ></textarea>
+        <label class="custom-file-upload">
+          <input
+            type="file"
+            accept=".JPG, .JPEG, .PNG"
+            required
+            id="file-input"
+          />
+          Upload Image
+        </label>
 
+        <button id="form-button">ADD</button>
+      </form>
     </section>
 
     <script src="JS/script.js"></script>
-
   </body>
 </html>

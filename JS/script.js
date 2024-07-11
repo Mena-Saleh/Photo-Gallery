@@ -79,7 +79,7 @@ function generateCardsFromAPIData(data) {
       photo.user.username,
       photo.urls.regular,
       "Lorem Ipsum",
-      photo.description,
+      photo.description || "Lorem ipsum dolor sit amet.",
       photo.likes
     );
   });
@@ -150,7 +150,7 @@ function deleteCardFromLocalStorage(id) {
 
 // Form validation and submission
 function handleFormSubmission(event) {
-  event.preventDefault();
+  //
 
   const name = document.querySelector("#text-name");
   const desc = document.querySelector("#text-desc");
@@ -169,6 +169,8 @@ function handleFormSubmission(event) {
       writeCardToLocalStorage(newCard);
       window.location.href = "index.html#local-photos-grid";
     };
+  } else {
+    event.preventDefault();
   }
 }
 
@@ -180,6 +182,10 @@ function isValidForm(name, desc, img) {
   }
   if (desc.value.length > 255) {
     alert("Description can't be more than 255 characters");
+    return false;
+  }
+  if (!img.files[0]) {
+    alert("Please upload an image");
     return false;
   }
   const imgType = img.files[0].type;

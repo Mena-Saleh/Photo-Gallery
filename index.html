@@ -1,130 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Photo Gallery</title>
-    <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">  
-
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Playwrite+PE:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body id="index-body">
-    <nav id = "nav">
+    <nav id="nav">
       <h1>Photo Gallery</h1>
       <a href="add-photo.html">ADD</a>
     </nav>
 
     <section id="gallery">
-
       <div class="title">
-        <hr>
+        <hr />
         <h2>Public Photos</h2>
-        <hr>
+        <hr />
       </div>
 
-      <div id="public-photos-grid" class="photo-grid">
+      <div id="public-photos-grid" class="photo-grid"></div>
 
-      </div> 
+      <div class="title">
+        <hr />
+        <h2>Local Photos</h2>
+        <hr />
+      </div>
 
-
-
-
-        <div class="title">
-          <hr>
-          <h2>Local Photos</h2>
-          <hr>
-        </div>
-
-
-        <div id="local-photos-grid" class="photo-grid">
-
-          <!-- <div class="card">
-          
-            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
-            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
-            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
-            <div class="photo">
-              <img src="Local_Images/automn.jpg" alt="user image">
-            </div>
-            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
-            <div class="photo-text">
-              <div class="photo-name-likes">
-                <h4>Photo Name</h4>
-                <h6><span class="like-count">142</span> Likes</h6>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
-            </div>
-            
-          </div>
-          <div class="card">
-            
-            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
-            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
-            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
-            <div class="photo">
-              <img src="Local_Images/fjord.jpg" alt="user image">
-            </div>
-            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
-            <div class="photo-text">
-              <div class="photo-name-likes">
-                <h4>Photo Name</h4>
-                <h6><span class="like-count">52</span> Likes</h6>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
-            </div>
-            
-          </div>
-          <div class="card">
-            
-            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
-            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
-            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
-            <div class="photo">
-              <img src="Local_Images/palmtunnel.jpg" alt="user image">
-            </div>
-            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
-            <div class="photo-text">
-              <div class="photo-name-likes">
-                <h4>Photo Name</h4>
-                <h6><span class="like-count">13</span> Likes</h6>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
-            </div>
-            
-          </div>
-          <div class="card">
-            
-            <img class= "profile-pic" src="Local_Images/user.jpg" alt="profile picture">
-            <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
-            <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)"></i>
-            <div class="photo">
-              <img src="Local_Images/encenadaport.jpg" alt="user image">
-            </div>
-            <i class="fa-regular fa-heart heart-icon" onclick="heartAnimation(event)"></i>
-            <div class="photo-text">
-              <div class="photo-name-likes">
-                <h4>Photo Name</h4>
-                <h6><span class="like-count">121</span> Likes</h6>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi voluptates voluptatibus sapiente placeat laborum aut doloremque a incidunt nobis suscipit architecto aliquid ducimus molestias alias quibusdam quasi quidem minus ut consequatur veritatis</p>
-            </div>
-            
-          </div> -->
-          
-        </div>
-
-    
-        
-        
-        
-
+      <div id="local-photos-grid" class="photo-grid"></div>
     </section>
 
     <script src="JS/script.js"></script>
-    
-
   </body>
 </html>
