@@ -20,7 +20,7 @@ This project is a photo gallery application featuring two albums: a public album
 
 Users can view public photos and see details such as the owner's username, description (if available from Unsplash), photo name (not provided by Unsplash), and number of likes. Liking a photo is a visual feature only and does not register with Unsplash.
 
-For the local album, users can add photos via the add-photo page. Due to storage limitations (photos are saved as data URLs), it is recommended to keep photo uploads under 5MB. The provided "Testing Thumbnails" folder contains sample images. Users can delete photos from local storage by clicking the trash icon and confirming the action.
+For the local album, users can add photos via the add-photo page. Due to storage limitations (photos are saved as data URLs), it is recommended to keep photo uploads under 5MB. The provided "Thumbnails" folder contains sample images. Users can delete photos from local storage by clicking the trash icon and confirming the action.
 
 ## Dependencies and Setup
 
@@ -29,10 +29,12 @@ This project requires only a web browser that supports HTML, CSS, and JavaScript
 ### Included Files and Folders:
 
 - `index.html`
+- `add-photo.html`
 - `CSS/main.css`
 - `JS/script.js`
-- `TestImages` (folder with sample images and a static local user profile image)
-- `add-photo.html`
+- `Images` (folder with app Icon and static local user profile image)
+- `Thumbnails` (folder with sample images)
+- `lib` (folder with js libraries such as toastr and jquery)
 - `README.md`
 
 ### How to Run the Project:
@@ -44,6 +46,7 @@ Navigate to the project folder and double-click the `index.html` file. The proje
 - HTML5
 - CSS3
 - JavaScript ES6
+- JS libraries (Toastr, SweetAlert2)
 
 ## Functionality
 

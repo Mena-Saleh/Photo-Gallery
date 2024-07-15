@@ -19,13 +19,26 @@ function updateLikesCount(heartIcon) {
   likesElem.innerText = likes;
 }
 
-// Delete clicked element
+// Delete clicked element with SweetAlert2 confirmation
 function deleteElement(event) {
   const deleteIcon = event.target;
-  if (confirm("Are you sure you want to delete this photo?")) {
-    deleteCardFromLocalStorage(deleteIcon.getAttribute("data-id"));
-    deleteIcon.closest(".card").remove();
-  }
+
+  // Using SweetAlert2 for the confirmation dialog
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteCardFromLocalStorage(deleteIcon.getAttribute("data-id"));
+      deleteIcon.closest(".card").remove();
+      Swal.fire("Deleted!", "Your photo has been deleted.", "success");
+    }
+  });
 }
 
 // API call credentials
@@ -91,7 +104,7 @@ const localGrid = document.querySelector("#local-photos-grid");
 function createLocalCard(card) {
   const localCard = `
     <div class="card">
-      <img class="profile-pic" src="TestImages/user.png" alt="profile picture">
+      <img class="profile-pic" src="Images/user.png" alt="profile picture">
       <div class="name">thecolorlesseyes<i class="fas fa-check"></i></div>
       <i class="fa-regular fa-trash-can trash-icon" onclick="deleteElement(event)" data-id="${card.id}"></i>
       <div class="photo">
@@ -150,7 +163,7 @@ function deleteCardFromLocalStorage(id) {
 
 // Form validation and submission
 function handleFormSubmission(event) {
-  //
+  event.preventDefault(); // Prevent form submission until validation is complete
 
   const name = document.querySelector("#text-name");
   const desc = document.querySelector("#text-desc");
@@ -169,28 +182,30 @@ function handleFormSubmission(event) {
       writeCardToLocalStorage(newCard);
       window.location.href = "index.html#local-photos-grid";
     };
-  } else {
-    event.preventDefault();
   }
 }
 
+// Validate text and image formats
 function isValidForm(name, desc, img) {
   const regex = /^[a-zA-Z-,]*$/;
   if (!regex.test(name.value)) {
-    alert("You can only use alphabets , or - for Name field");
-    return false;
-  }
-  if (desc.value.length > 255) {
-    alert("Description can't be more than 255 characters");
+    toastr.warning(
+      "You can only use alphabets , or - for Name field",
+      "Warning"
+    );
     return false;
   }
   if (!img.files[0]) {
-    alert("Please upload an image");
+    toastr.warning("Please upload an image", "Warning");
     return false;
   }
   const imgType = img.files[0].type;
   if (!["image/jpg", "image/jpeg", "image/png"].includes(imgType)) {
-    alert("Please choose an image in jpg, jpeg or png format!");
+    toastr.warning(
+      "Please choose an image in jpg, jpeg or png format!",
+      "Warning"
+    );
+
     return false;
   }
   return true;
@@ -206,6 +221,26 @@ if (document.body.id === "index-body") {
   });
 } else {
   document
-    .querySelector("#form-button")
-    .addEventListener("click", handleFormSubmission);
+    .querySelector("#add-photo-form")
+    .addEventListener("submit", handleFormSubmission);
 }
+
+// Toastr Options
+
+toastr.options = {
+  closeButton: true,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: "toast-top-right",
+  preventDuplicates: true,
+  onclick: null,
+  showDuration: "300",
+  hideDuration: "1000",
+  timeOut: "5000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
