@@ -16,6 +16,10 @@
 
 This project is a photo gallery application featuring two albums: a public album with photos retrieved from the Unsplash API, and a local album with photos saved in the user's local storage.
 
+<p align="center">
+    <img src="Screenshots/1.png" alt="App Screenshot">
+</p>
+
 ## Usage
 
 Users can view public photos and see details such as the owner's username, description (if available from Unsplash), photo name (not provided by Unsplash), and number of likes. Liking a photo is a visual feature only and does not register with Unsplash.
