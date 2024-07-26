@@ -68,5 +68,5 @@ Users can upload photos to the local album, stored in local storage (up to 5MB).
 
 - **Name**: Mena Ashraf Mikhael Saleh
 - **Email**: [Mena.a.saleh.2001@gmail.com](mailto:Mena.a.saleh.2001@gmail.com)
-- **GitHub**: [https://github.com/Mena-Ibrahim](https://github.com/Mena-Ibrahim)
+- **GitHub**: [https://github.com/Mena-Saleh](https://github.com/Mena-Saleh)
 - **LinkedIn**: [https://www.linkedin.com/in/mena-ashraf-23b947167/](https://www.linkedin.com/in/mena-ashraf-23b947167/)
